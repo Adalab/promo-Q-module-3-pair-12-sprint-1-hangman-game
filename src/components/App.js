@@ -1,8 +1,13 @@
 import '../styles/App.scss';
 //import blackboard from '../images/blackboard.jpg';
 //import '../styles/fonts/KgTenThousandReasons-R1ll.ttf';
-
+import { useState } from 'react';
 function App () {
+  const [numberOfErrors, setNumber] = useState(0);
+  const handleButton = (ev) => {
+    setNumber(numberOfErrors + 1);
+    return setNumber;
+  }
   return (
 
     <div className="page">
@@ -46,9 +51,11 @@ function App () {
               name="last-letter"
               id="last-letter"
             />
+
           </form>
+          <button onClick={handleButton}>Incrementar</button>
         </section>
-        <section className="dummy error-5">
+        <section className="dummy error-numberOfErrors">
           <span className="error-13 eye"></span>
           <span className="error-12 eye"></span>
           <span className="error-11 line"></span>
