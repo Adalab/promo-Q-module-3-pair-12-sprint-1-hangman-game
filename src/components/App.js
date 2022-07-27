@@ -1,8 +1,8 @@
 import '../styles/App.scss';
-// import pepino from '../images/logo.jpg';
+//import blackboard from '../images/blackboard.jpg';
+//import '../styles/fonts/KgTenThousandReasons-R1ll.ttf';
 
-
-function App() {
+function App () {
   return (
 
     <div className="page">
