@@ -8,6 +8,7 @@ function App () {
     setNumber(numberOfErrors + 1);
     return setNumber;
   }
+
   return (
 
     <div className="page">
@@ -55,7 +56,7 @@ function App () {
           </form>
           <button onClick={handleButton}>Incrementar</button>
         </section>
-        <section className="dummy error-numberOfErrors">
+        <section className={`dummy error-${numberOfErrors}`}>
           <span className="error-13 eye"></span>
           <span className="error-12 eye"></span>
           <span className="error-11 line"></span>
