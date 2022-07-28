@@ -4,10 +4,16 @@ import '../styles/App.scss';
 import { useState } from 'react';
 function App () {
   const [numberOfErrors, setNumber] = useState(0);
+  const [lastLetter, setLastLetter] = useState('');
   const handleButton = (ev) => {
     setNumber(numberOfErrors + 1);
     return setNumber;
   }
+  const handleInput = (ev) => {
+
+    setLastLetter(ev.currentTarget.value);
+  }
+
 
   return (
 
@@ -51,6 +57,8 @@ function App () {
               type="text"
               name="last-letter"
               id="last-letter"
+              value={lastLetter}
+              onChange={handleInput}
             />
 
           </form>
