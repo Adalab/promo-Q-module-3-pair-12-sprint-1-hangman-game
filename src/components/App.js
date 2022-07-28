@@ -11,10 +11,17 @@ function App () {
   }
   const handleInput = (ev) => {
 
-    setLastLetter(ev.currentTarget.value);
+    let regex = new RegExp('^[A-Za-zÑñÁáÉéÍíÓóÚúÜü ]{1}$');
+
+    if (regex.test(ev.currentTarget.value)) {
+
+      setLastLetter(ev.currentTarget.value);
+
+    } else {
+      setLastLetter('');
+    }
+
   }
-
-
   return (
 
     <div className="page">
@@ -49,11 +56,11 @@ function App () {
             </ul>
           </div>
           <form className="form">
-            <label className="title" for="last-letter">Escribe una letra:</label>
+            <label className="title" htmlFor="last-letter">Escribe una letra:</label>
             <input
-              autocomplete="off"
+              autoComplete="off"
               className="form__input"
-              maxlength="1"
+              maxLength="1"
               type="text"
               name="last-letter"
               id="last-letter"
