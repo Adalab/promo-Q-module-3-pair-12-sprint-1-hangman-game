@@ -5,6 +5,7 @@ import { useState } from 'react';
 function App () {
   const [numberOfErrors, setNumber] = useState(0);
   const [lastLetter, setLastLetter] = useState('');
+  const [word, setWord] = useState('katakroker');
   const handleButton = (ev) => {
     setNumber(numberOfErrors + 1);
     return setNumber;
@@ -22,6 +23,17 @@ function App () {
     }
 
   }
+  const renderSolutionLetters = () => {
+    const wordLetters = word.split('');
+
+    const htmlLi = wordLetters.map((letterItem) => {
+
+      return <li className="letter">[letterItem]</li>
+    });
+
+
+  }
+
   return (
 
     <div className="page">
@@ -32,17 +44,9 @@ function App () {
         <section>
           <div className="solution">
             <h2 className="title">Solución:</h2>
+            {renderSolutionLetters()}
             <ul className="letters">
-              <li className="letter">k</li>
-              <li className="letter">a</li>
-              <li className="letter"></li>
-              <li className="letter">a</li>
-              <li className="letter">k</li>
-              <li className="letter">r</li>
-              <li className="letter"></li>
-              <li className="letter">k</li>
-              <li className="letter">e</li>
-              <li className="letter">r</li>
+
             </ul>
           </div>
           <div className="error">
