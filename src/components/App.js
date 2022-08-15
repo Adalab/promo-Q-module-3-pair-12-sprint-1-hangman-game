@@ -2,7 +2,7 @@ import '../styles/App.scss';
 //import blackboard from '../images/blackboard.jpg';
 //import '../styles/fonts/KgTenThousandReasons-R1ll.ttf';
 import { useState } from 'react';
-function App () {
+function App() {
   const [numberOfErrors, setNumber] = useState(0);
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('katakroker');
@@ -27,10 +27,8 @@ function App () {
     const wordLetters = word.split('');
 
     const htmlLi = wordLetters.map((letterItem) => {
-
       return <li className="letter">[letterItem]</li>
     });
-
 
   }
 
